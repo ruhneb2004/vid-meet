@@ -2,12 +2,10 @@ import { useContext } from "react";
 import { RoomContext } from "../context/RoomContext";
 
 const CreateBtn: React.FC = () => {
-  const ws = useContext(RoomContext);
+  const { ws } = useContext(RoomContext);
 
   const createRoom = () => {
-    if (ws) {
-      ws.emit("create-room");
-    }
+    ws.emit("create-room");
     console.log(ws);
   };
 
